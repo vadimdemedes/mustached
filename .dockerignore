@@ -1,0 +1,7 @@
+.deps
+libs
+.crystal
+doc
+bin
+Makefile
+Dockerfile*

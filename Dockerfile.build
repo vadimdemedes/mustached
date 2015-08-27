@@ -1,0 +1,13 @@
+FROM manastech/crystal:latest
+
+RUN apt-get update && \
+	apt-get install -y git && \
+	apt-get clean
+
+WORKDIR /home
+
+ADD Projectfile ./
+RUN crystal deps
+
+ADD . .
+RUN crystal build src/mustached.cr -o mustached-linux-x64 --release
